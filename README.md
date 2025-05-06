@@ -1,8 +1,8 @@
-**SnapFire 🔥
+# SnapFire 🔥
 
 SnapFire is an AI-powered image filtering web application that transforms your photos using advanced machine learning techniques. Built with Python, Flask, and Docker, it offers a seamless experience for applying artistic filters to images.
 
-🚀 Features
+## 🚀 Features
 
     AI-Driven Filters: Apply sophisticated filters to your images using pre-trained AI models.
 
@@ -12,7 +12,7 @@ SnapFire is an AI-powered image filtering web application that transforms your p
 
     Azure-Ready: Optimized for deployment on Azure App Service for scalability and reliability.
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
     Frontend: HTML, CSS (within Flask templates)
 
@@ -22,7 +22,7 @@ SnapFire is an AI-powered image filtering web application that transforms your p
 
     Deployment: Docker, Azure App Service
 
-📦 Installation
+## 📦 Installation
 
     Clone the repository:
 
@@ -37,7 +37,7 @@ Build and run with Docker:
     Access the application:
     Open your browser and navigate to http://localhost:5000.
 
-🌐 Deployment on Azure
+## 🌐 Deployment on Azure
 
 To deploy on Azure App Service:
 
@@ -54,12 +54,12 @@ To deploy on Azure App Service:
         Configure the Web App to pull the image from the registry.
 
 For detailed steps, refer to Azure's official documentation.
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-🙌 Support
+## 🙌 Support
 
 If you find this project useful and would like to support its development, consider sponsoring me:
