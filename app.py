@@ -2,7 +2,6 @@ import os
 from flask import Flask, request, render_template, send_from_directory
 from werkzeug.utils import secure_filename
 from diffusers import StableDiffusionControlNetPipeline, ControlNetModel, UniPCMultistepScheduler
-from diffusers.utils import load_image
 import torch
 import cv2
 from PIL import Image
@@ -41,10 +40,9 @@ def apply_scanner_darkly_ai(input_path, output_path, prompt, negative_prompt, st
 
     # Optimize performance
     pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config)
-    pipe.enable_xformers_memory_efficient_attention()
-    pipe.to("cuda")
+    pipe.to("cpu")
 
-    init_image = load_image(input_path).resize((512, 512))
+    init_image = Image.open(input_path).resize((512, 512))
     control_image = generate_edge_map(input_path).resize((512, 512))
 
     result = pipe(

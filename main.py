@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from PIL import Image
 from diffusers import StableDiffusionControlNetPipeline, ControlNetModel, UniPCMultistepScheduler
-from diffusers.utils import load_image
 import torch
 import warnings
 import os
@@ -40,7 +39,7 @@ def apply_scanner_darkly_ai(input_path, output_path, prompt, negative_prompt, st
     pipe.to("cpu")
 
     # Prepare input image and edge map
-    init_image = load_image(input_path).resize((512, 512))
+    init_image = Image.open(input_path).resize((512, 512))
     control_image = generate_edge_map(input_path).resize((512, 512))
     
     # Generate image
@@ -58,4 +57,4 @@ def apply_scanner_darkly_ai(input_path, output_path, prompt, negative_prompt, st
     result.save(output_path)
     
 # Example usage
-apply_scanner_darkly_ai('input.jpg', 'output.jpg', "apply scanner darkly theme on the input image", "nature, scenery", 30, 0)
+apply_scanner_darkly_ai('input.jpeg', 'outputpic.jpeg', "apply scanner darkly theme on the input image", "nature, scenery", 30, 0)
