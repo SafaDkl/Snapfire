@@ -1,4 +1,4 @@
-SnapFire 🔥
+**SnapFire 🔥
 
 SnapFire is an AI-powered image filtering web application that transforms your photos using advanced machine learning techniques. Built with Python, Flask, and Docker, it offers a seamless experience for applying artistic filters to images.
 
