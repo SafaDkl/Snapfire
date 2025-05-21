@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scanner Darkly AI</title>
+  <title>SnapFire 🔥</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../templates/rules.css"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +21,18 @@
   }
 
    body {
-      font-family: "Noto Sans Display", sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #fef6f3;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath fill='%23FCD1D1' d='M10 2l1.6 3.2 3.5.5-2.5 2.4.6 3.5-3.2-1.7-3.2 1.7.6-3.5-2.5-2.4 3.5-.5z'/%3E%3Cpath fill='%23A883DC' d='M50 5c-2 0-4 1.5-4 3.5S48 13 50 15c2-2 4-3.5 4-6S52 5 50 5z'/%3E%3Ccircle cx='15' cy='45' r='4' fill='%23FD973C'/%3E%3Cpath fill='%23F9A3D2' d='M40 42l1.6 3.2 3.5.5-2.5 2.4.6 3.5-3.2-1.7-3.2 1.7.6-3.5-2.5-2.4 3.5-.5z'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-repeat: repeat;
+      background-size:44px;
       color: #3a2b4c;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 40px 20px;
     }
-
     h1, h2 {
       margin: 0;
       font-size: 2rem;
@@ -41,7 +44,7 @@
       margin-bottom: 20px;
     }
 
-    .upload-box {
+   .upload-box {
       border: 2px dashed #c5a9f5;
       border-radius: 20px;
       padding: 30px;
@@ -59,7 +62,7 @@
       margin: 0 auto 15px;
     }
 
-    .upload-btn {
+    .upload-btn-label {
       background-color: #a883dc;
       color: white;
       border: none;
@@ -67,6 +70,11 @@
       font-size: 1rem;
       border-radius: 30px;
       cursor: pointer;
+      display: inline-block;
+    }
+
+    .upload-input {
+      display: none;
     }
 
     .prompt-box {
@@ -92,18 +100,28 @@
       font-size: 1.2rem;
       border-radius: 40px;
       cursor: pointer;
+      width:100%;
     }
 
     .lightbulb {
       font-size: 1rem;
       margin-right: 10px;
     }
+     .upload-btn {
+      background-color: #a883dc;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+    }
 </style>
 </head>
 
 <body class="bg-gray-100 text-gray-900 flex items-center justify-center min-h-screen">
   
-  <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
+  <div class="bg-white rounded-2xl p-8 w-full max-w-md">
 
     <h1 class="text-2xl font-bold mb-6 text-center">SnapFire 🔥</h1>
 
@@ -113,9 +131,9 @@
       
 
       <div class="upload-box">
-        <img src="/upload/user.jpeg" alt="User Icon">
-        <span class="lightbulb">Choose an image </span>
-        <input type="file" name="file" id="file" required class="mt-1 w-full border rounded p-2" />
+        <img src="/static/user.png" alt="User Icon">
+        <label for="file-upload" class="upload-btn-label">Upload Image</label>
+        <input type="file" id="file-upload" class="upload-input" name="file">
       </div>
 
      <span class="lightbulb">Prompt 💡</span>
