@@ -2,15 +2,15 @@ name: Deploy to Azure DevOps
 
 on:
   push:
-    branches: [main]
+    branches: main
 
 jobs:
   trigger-devops:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Azure DevOps Pipeline
-        uses: Azure/pipelines@v1
+        uses: Azure/pipelines@v2
         with:
-          azure-devops-project-url: https://dev.azure.com/safadekhil/sanpfire
+          azure-devops-project-url: https://github.com/SafaDkl/Snapfire
           azure-pipeline-name: buildAndDeploy
           azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
