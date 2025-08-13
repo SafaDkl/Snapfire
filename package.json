@@ -1,0 +1,12 @@
+{
+  "name": "snapfire",
+  "version": "1.0.0",
+  "description": "SnapFire is an AI-powered image filtering web application that transforms your photos using advanced machine learning techniques. Built with Python, Flask, and Docker, it offers a seamless experience for applying artistic filters to images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
