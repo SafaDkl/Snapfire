@@ -9,7 +9,26 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Export static site (if needed)
+        run: npm run export
+
+      # Only needed if Azure requires a zip package
+      - name: Zip output
+        run: zip -r app.zip .next out public package.json
 
       - name: Login to Azure
         uses: azure/login@v1
@@ -19,6 +38,9 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: SnapFire
+          app-name: SnapFire  # Replace with your actual app service name
           slot-name: production
-          package: .
+          package: app.zip
+      - uses: actions/checkout@v3
+
+      
