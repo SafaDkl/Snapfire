@@ -20,5 +20,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: SnapFire
-          slot-name: test
+          slot-name: production
           package: .
